@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.UUID;
 
 public class CsvDataLoader {
 
@@ -20,6 +21,7 @@ public class CsvDataLoader {
                 line = reader.readLine();
                 if (line != null) {
                     User user = new User(line);
+                    user.setRequestId(UUID.randomUUID().toString());
                     user.setRegistered(false);
                     auction.addUser(user);
                 }

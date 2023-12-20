@@ -1,5 +1,6 @@
 package com.springrestdata.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -9,7 +10,7 @@ import lombok.*;
 @Entity
 @ToString
 public class User {
-    
+
     @Id
     @GeneratedValue
     private Long id;
@@ -19,10 +20,15 @@ public class User {
 
     @Getter
     @Setter
+    private String requestId;
+
+    @Getter
+    @Setter
     private String name;
 
     @Getter
     @Setter
+    //@JsonIgnore --- Use this annotation to prevent this attribute from being displayed
     private boolean isRegistered;
 
     @Getter
