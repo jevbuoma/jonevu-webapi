@@ -1,12 +1,15 @@
 package com.springrestdata.demo.events;
 
 import com.springrestdata.demo.model.User;
+import lombok.Builder;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.rest.core.event.AbstractRepositoryEventListener;
 import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
+@Data
 public class RepositoryEventListener extends AbstractRepositoryEventListener<User> {
 
     @Override
